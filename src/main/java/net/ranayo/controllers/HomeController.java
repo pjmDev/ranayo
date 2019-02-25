@@ -1,6 +1,7 @@
 package net.ranayo.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -10,13 +11,15 @@ public class HomeController {
 		return "index";
 	}
 	
-	@GetMapping("/test")
-	public String test() {
-		System.out.println("in connect");
-		return "tests";
+	public String test(String name, Model model) {
+		model.addAttribute("name", name);
+		return "index";
 	}
-	
-	
+
+	@GetMapping("/content/about")
+	public String about() {
+		return "contents/about";
+	}
 	
 }
 

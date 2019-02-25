@@ -21,3 +21,5 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
+[compileJava, compileTestJava]*.option*.encoding='UTF-8'

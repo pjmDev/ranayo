@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.topmenu ul {width:900px; height:80px; margin:0px; padding:0px; list-style:none;}
+.topmenu ul li {float:left; height:80px; line-height:75px; padding-top:5px;}
+.topmenu ul li a{font-family:"Nato Sans CJK KR Medium",Dotum; font-size:15.5px; color:black; text-decoration:none;}
+
+.ralogin{font-size:14px; color:#8e8e8e;}  .ralogin{font-family:"Nato Sans CJK KR Light", Dotum;}
+.ralogin a{font-size:14px;color:#7c7c7c; text-decoration:none; } .ralogin a{font-family:"Nato Sans CJK KR Medium";, Dotum;}
+
+.scrollmenu {position:fixed; z-index:999;}
+.scrollmenu ul {width:1100px; height:45px; margin:0px; padding:0px; list-style:none;}
+.scrollmenu ul li {float:left; height:45px; line-height:45px;}
+.scrollmenu ul li a{font-family:"Nato Sans CJK KR Medium",Dotum; font-size:15.5px; color:black; text-decoration:none;}
