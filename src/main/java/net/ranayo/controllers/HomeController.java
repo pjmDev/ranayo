@@ -17,9 +17,13 @@ public class HomeController {
 	}
 
 	@GetMapping("/content/about")
-	public String about() {
+	public String goAbout() {
 		return "contents/about";
 	}
 	
+	@GetMapping("/test")
+	public String goTest() {
+		return "redirect:/test/db";
+	}	
 }
 
