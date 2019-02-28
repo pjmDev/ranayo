@@ -31,9 +31,9 @@
        </script> 
 	
 <body> 
+<form method="post" action="/users/login" >
 	  <div style="width:100%; height:100%;" > <!--strat -->
 <div style="width:100%; height:90px;"> </div> <!--blank1 -->
-    <form action="#" method="post">
 		 <div style="width:430px; height:80px; margin:0 auto">
 		    <a href="/"><img src="/data/pub/login_logo.png"
 			width="430px" height="80px"> 
@@ -41,21 +41,23 @@
          <div style="width:100%; height:35px;"> </div> <!--blank2 -->		 
 	        <div style="width:430px; height:750px; margin:0 auto;">  <!--login page-->
 		    <div style="width:430px; height:50px; ">
-			   <input  type="text" name="id" value="아이디" onblur="checkField(this)" onfocus="clearField(this)" style= "font-size:16px; width:418px; height:45px; padding-left:10px;"> </div>
+			   <input  type="text" name="usEmail" value="아이디" onblur="checkField(this)" onfocus="clearField(this)" style= "font-size:16px; width:418px; height:45px; padding-left:10px;"> </div>
             <div style="width:430px; height:20px;"></div> <!--blank3 -->
 	     	<div style="width:430px; height:50px;">
-			<input type="password" name="password" value="passward" onblur="checkField(this)" onfocus="clearField(this)" style="font-size:16px; width:418px; height:45px; padding-left:10px;"> </div>
+			<input type="password" name="usPasswd" value="비밀번호" onblur="checkField(this)" onfocus="clearField(this)" style="font-size:16px; width:418px; height:45px; padding-left:10px;"> </div>
 			<div style="width:430px; height:40px;"></div> <!--blank4 -->
 			<div style="width:430px; height:70px;">
 			    <div class="login_box" style="width:205px; height:65px; float:left;"> 
 				    <input  type="image" src="/data/module/login/login_boxk.png" 
 					   width="205px" height="65px" name="Submit" value="Submit"  align="absmiddle"> </div>
+				</form>
+				
 				<div class="join_box" style="width:205px; height:65px; float:right;"> 
 				   <a href="/users/join-pg">
 				   <img src="/data/module/login/join_boxk.png" 
 		             width="205px" height="65px" alt="join"> </a> </div>
 			</div>
-	  </form>
+
 	        <div style="width:430px; height:10px;"> </div><!--blank5 -->
 			<div style="width:430px; height:20px;">
 	        <div class="idpassf" style="width:180px; height30px; float:right; text-align:right; padding-right:7px;">

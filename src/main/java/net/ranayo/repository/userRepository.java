@@ -12,5 +12,5 @@ import net.ranayo.model.user;
  */
 @Repository
 public interface userRepository extends JpaRepository<user, Long>{
-
+	user findByusEmail(String usEmail);
 }

@@ -38,7 +38,14 @@
 	          <div style="width:960px; height:20px; text-align:right;">
 			    <div class="ralogin" style="width:300px; height:20px; float:right; text-align:right; 
 				                   padding-right:5px; padding-top:10px;"> 
-								   <a href="/users/login-pg"> 로그인</a>&nbsp; I &nbsp;<a href="/users/join-pg">회원가입</a>  </div>
+								   {{^userState}}
+								   <a href="/users/login-pg"> 로그인</a>&nbsp; I &nbsp;<a href="/users/join-pg">회원가입</a>  
+								   {{/userState}}
+								   {{#userState}}
+								   {{usNickname}}님 환영합니다.&nbsp; I &nbsp;<a href="/users/logout">로그아웃</a>  
+								   {{/userState}}
+								   </div>
+								   
 			  </div> <!--login-->
 		      <div class="topmenu" style="width:900px; height50px; float:right; overflow:hidden;">
 			    <ul>
