@@ -42,6 +42,7 @@ public class userService {
 	public boolean coLogin(Map<String, String> map) {
 		user user = new user();
 		user = userRe.findByusEmail(map.get("usEmail"));
+		System.out.println("상규찡");
 		if(user == null) {
 			return false;
 		}
