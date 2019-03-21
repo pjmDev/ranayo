@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import lombok.ToString;
 
 @Entity
-@Table(name = "user")
+@Table(name = "tb_user")
 @ToString
 public class user {
 	@Id

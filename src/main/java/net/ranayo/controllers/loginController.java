@@ -1,13 +1,14 @@
 package net.ranayo.controllers;
 
+import java.io.PrintWriter;
 import java.util.Map;
 
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,10 +25,15 @@ public class loginController {
 		return "/module/login/join";
 	}
 	
-	@RequestMapping(value = "/users/login", method = RequestMethod.POST)
-	public String Login(@RequestParam Map<String, String> map) {
+	@RequestMapping(value = "/users/login", method = {RequestMethod.POST})
+	public String Login(@RequestParam Map<String, String> map, HttpServletRequest request
+            , HttpServletResponse response) throws Exception {
 		if(!userSv.coLogin(map)) {
-			return "/users/login-pg";
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('로그인 정보를 확인해주세요.'); history.go(-1);</script>");
+			out.flush();
+			return "redirect:/users/login-pg";
 		}
 		return "redirect:/";
 	}
@@ -36,7 +42,7 @@ public class loginController {
 		userSv.coJoin(map);
 		return "redirect:/users/login-pg";
 	}
-
+	
 	@GetMapping("/users/logout")
 	public String Logout() {
 		userSv.coLogout();
@@ -44,7 +50,10 @@ public class loginController {
 	}
 	
 	@GetMapping("/users/login-pg")
-	public String goLogin() {
+	public String goLogin(HttpServletRequest request
+            , HttpServletResponse response) throws Exception {
+		
+		userSv.ChkSession(request, response);
 		return "/module/login/login";
 	}
 	
@@ -57,6 +66,5 @@ public class loginController {
 	public String goFindPwd() {
 		return "/module/login/findPasswd";
 	}
-	
 	
 }
