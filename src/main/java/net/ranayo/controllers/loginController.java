@@ -20,6 +20,13 @@ public class loginController {
 	@Autowired
 	private userService userSv;
 	
+	
+	@RequestMapping("/login-pg")
+	public String loginPage(){
+		return "/module/login/login";
+	}
+
+
 	@GetMapping("/users/join-pg")
 	public String goJoin() {
 		return "/module/login/join";
@@ -31,12 +38,16 @@ public class loginController {
 		if(!userSv.coLogin(map)) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("<script>alert('로그인 정보를 확인해주세요.'); history.go(-1);</script>");
+			out.println("<script>alert('로그인 정보를 확인해주세요.');</script>");
 			out.flush();
+			
 			return "redirect:/users/login-pg";
 		}
-		return "redirect:/";
+		else {
+			return "redirect:/";
+		}
 	}
+	
 	@RequestMapping(value = "/users/join", method = RequestMethod.POST)
 	public String Join(@RequestParam Map<String, String> map) {	
 		userSv.coJoin(map);

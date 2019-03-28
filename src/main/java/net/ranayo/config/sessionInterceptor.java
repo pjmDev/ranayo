@@ -29,14 +29,13 @@ public class sessionInterceptor extends HandlerInterceptorAdapter {
     			out.println("<script>alert('로그인 해주세요');location.href=\"/users/login-pg\";</script>");
     			//response.sendRedirect("/users/login-pg"); 
     			out.flush();
-    			
             }
         
             catch (IOException ie ) {} //만약 리다이렉션 도중 에러가 난 경우
 		//log.info("Interceptor > preHandle");
-        return false;
-        }
-    }
+            return false;
+        	}
+	}
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         //log.info("Interceptor > postHandle");

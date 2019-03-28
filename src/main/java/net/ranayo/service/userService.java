@@ -37,6 +37,7 @@ public class userService {
 			user.setUsJoinip("usJoinip");
 			user.setUsState(map.get("usState"));
 			user.setUsUpip("usUpip");
+			user.setUsAuth(70);
 			
 			System.out.println("cojoin");
 			userRe.save(user);
